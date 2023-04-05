@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Registration</title>
+</head>
+<body class="bg-dark">
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-secondary">
+                    <div class="card-header bg-secondary text-white text-center">
+                        <h3>Registration Form</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="{{ form.username.id_for_label }}">Username</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.email.id_for_label }}">Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.password1.id_for_label }}">Password</label>
+                                {{ form.password1 }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                                {{ form.password2 }}
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-block">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h5 class="text-white" >Already a Member? <a href="{%url 'signin'%}">Click Here To Sign In</a></h5>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoArm9i9f6PmoD" crossorigin="anonymous"></script>
+    </body>

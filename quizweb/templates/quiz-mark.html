@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      {% if result == 'pass' %}
+        <h1>Congratulations! You have passed the quiz with {{ marks_obtained }} marks.</h1>
+      {% else %}
+        <h1>BETTER LUCK NEXT TIME!</h1>
+      {% endif %}
+  
+      <p>Total questions: {{ question_attended }}</p>
+      <p>Right answers: {{ right_answer_count }}</p>
+      <p>Wrong answers: {{ wrong_answer_count }}</p>
+    <a type="button" class="btn btn-dark" href="{%url 'home'%}">HOME PAGE</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    margin-top: 50px; 
+  }
+</style>
+{% endblock %}
